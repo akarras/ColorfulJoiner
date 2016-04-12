@@ -1,0 +1,24 @@
+name: ColorfulJoiner
+main: net.supernoobs.colorfuljoiner.ColorfulJoiner
+version: ${version}
+author: [colorfulchew]
+softdepend: [PlaceholderAPI]
+commands:
+  joinreload:
+    description: Reloads the plugin configs
+    permission: colorfuljoiner.admin
+    usage: /joinreload
+  joinmenu:
+    description: Adds we edit for the specified period
+    permission: colorfuljoiner.usemenu
+    usage: /joinmenu
+permissions:
+colorfuljoiner.admin:
+  description: Allows all admin commands
+  default: op
+colorfuljoiner.usemenu:
+  description: Alows players to use /joinmenu
+  default: true
+colorfuljoiner.messages.*:
+  description: Allows players to use all messages
+  default: false

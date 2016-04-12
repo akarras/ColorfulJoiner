@@ -1,0 +1,44 @@
+#Sets the message the player recieves upon first joining the server
+firstJoin: 'This is %player_name%''s first time joining! Welcome them to the server!'
+#Prefix to all join/leave messages
+phrases:
+  join: '%vault_prefix%%player_name% §2has joined, §a'
+  quit: '%vault_prefix%%player_name% §chas left, §a'
+
+#Sets the default join and leave messages for the player
+default:
+  join: '<3'
+  quit: ':c'
+#Lists customized join messages
+#Perm examples: colorfuljoiner.message.cutie, colorfuljoiner.message.tickle_attack
+messages:
+  cutie:
+    join: 'What a cutie. c:'
+    quit: "I'll miss that sweet ass. :c"
+  dickbutt:
+    join: dickbutts.
+    quit: dickbutts.
+  noob:
+    join: "fookin' noob"
+    quit: "let's call them names"
+  tickle attack:
+    join: 'time to tickle them'
+    quit: 'careful, I think they farted'
+  married:
+    join: 'here comes daddy'
+    quit: 'Time for wifely duties. ;)'
+  liar:
+    join: "hide yo' kids"
+    quit: "check yo' pockets"
+  bye:
+    join: "bitch say bye next time"
+    quit: "they didn't say bye ;-;"
+  thx:
+    join: ohhai
+    quit: kthxbai
+  what:
+    join: whatchu want?
+    quit: oh, okay.
+  drunk:
+    join: I think they''re drunk
+    quit: probably going for more booze
