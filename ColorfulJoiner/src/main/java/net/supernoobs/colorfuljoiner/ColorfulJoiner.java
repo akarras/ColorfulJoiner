@@ -12,6 +12,8 @@ public class ColorfulJoiner extends JavaPlugin {
 	public static ColorfulJoiner plugin;
 	public ColorfulStorageLoader storage;
 	
+	public boolean usingBungee;
+	
 	@Override
 	public void onEnable(){
 		plugin = this;
@@ -21,6 +23,8 @@ public class ColorfulJoiner extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new InventoryListener(), this);
 		getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 		getServer().getMessenger().unregisterIncomingPluginChannel(this, "BungeeCord", new BungeeListener());
+		
+		usingBungee = getConfig().getBoolean("using-bungee", false);
 	}
 	
 	
