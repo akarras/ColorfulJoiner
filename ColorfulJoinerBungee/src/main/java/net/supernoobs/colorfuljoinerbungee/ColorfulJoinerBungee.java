@@ -6,11 +6,13 @@ import net.supernoobs.colorfuljoinerbungee.players.PlayerTracker;
 
 public class ColorfulJoinerBungee extends Plugin {
 	public static PlayerTracker tracker;
+	public static ColorfulJoinerBungee plugin;
 	
     @Override
     public void onEnable() {
     	tracker = new PlayerTracker();
         getProxy().getPluginManager().registerListener(this, new BungeeListener());
+        plugin = this;
     }
 
 }
