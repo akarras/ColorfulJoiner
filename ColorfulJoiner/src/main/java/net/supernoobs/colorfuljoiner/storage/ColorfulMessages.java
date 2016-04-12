@@ -14,6 +14,7 @@ public class ColorfulMessages {
 	private HashMap<String,JoinType> joinMessages;
 	private JoinType defaultJoin;
 	private JoinType phrases;
+	private JoinType prefix;
 	private String firstJoin;
 	
 	public ColorfulMessages() {
@@ -25,6 +26,10 @@ public class ColorfulMessages {
 		phrases = new JoinType();
 		phrases.joinMessage = (String) yaml.get("phrases.join");
 		phrases.quitMessage = (String) yaml.get("phrases.quit");
+		
+		prefix = new JoinType();
+		prefix.joinMessage = (String) yaml.get("players.join");
+		prefix.quitMessage = (String) yaml.get("players.leave");
 		
 		firstJoin = (String) yaml.get("firstJoin");
 		
@@ -42,6 +47,10 @@ public class ColorfulMessages {
 	
 	public JoinType getPhrases(){
 		return phrases;
+	}
+	
+	public JoinType getPrefix(){
+		return prefix;
 	}
 	
 	public String getFirstJoin(){

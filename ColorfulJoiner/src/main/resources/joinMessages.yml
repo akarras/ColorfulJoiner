@@ -9,6 +9,7 @@ phrases:
 default:
   join: '<3'
   quit: ':c'
+
 #Lists customized join messages
 #Perm examples: colorfuljoiner.message.cutie, colorfuljoiner.message.tickle_attack
 messages:
