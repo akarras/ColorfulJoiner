@@ -4,7 +4,7 @@
 
   <groupId>net.supernoobs</groupId>
   <artifactId>ColorfulJoiner</artifactId>
-  <version>1.0</version>
+  <version>1.1</version>
   <packaging>jar</packaging>
 
   <name>ColorfulJoiner</name>
@@ -52,9 +52,16 @@
             <version>1.5</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-chat</artifactId>
+            <version>1.9-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
    	</dependencies>
    	
-   	  <build>
+  <build>
     <resources>
       <resource>
         <directory>src/main/resources</directory>

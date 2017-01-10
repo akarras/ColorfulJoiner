@@ -1,17 +1,15 @@
-package net.supernoobs.colorfuljoiner.storage;
+package net.supernoobs.colorfuljoiner;
 
 import java.io.File;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import net.supernoobs.colorfuljoiner.ColorfulJoiner;
-
-public class ColorfulPluginStrings {
+public class Messages {
 	public String noPermission;
 	
 	
 	
-	public ColorfulPluginStrings() {
+	public Messages() {
 		File plStrings = new File(ColorfulJoiner.plugin.getDataFolder()+File.separator+"pluginMessages.yml");
 		if(!plStrings.exists())
 			ColorfulJoiner.plugin.saveResource("pluginMessages.yml", false);

@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import net.md_5.bungee.api.connection.ProxiedPlayer;
+import net.supernoobs.colorfuljoinerbungee.ColorfulJoinerBungee;
+import net.supernoobs.colorfuljoinerbungee.datatypes.JoinType;
 
 public class PlayerTracker {
 	HashMap<UUID,BungeePlayer> playerMap;
@@ -13,14 +15,21 @@ public class PlayerTracker {
 	
 	
 	public void playerJoined(ProxiedPlayer player) {
+		BungeePlayer bungeePlayer = new BungeePlayer(player);
+		playerMap.put(player.getUniqueId(), bungeePlayer);
+	}
+	
+	public void playerLeft(ProxiedPlayer player) {
+		playerMap.remove(player.getUniqueId());
+	}
+	
+	public void playerSwitch(ProxiedPlayer player) {
 		
 	}
 	
-	public void playerLeft(UUID player) {
-		playerMap.remove(player);
-	}
-	
-	public void playerSwitch() {
-		
+	public void setPlayerPhrase(UUID uuid, JoinType type) {
+		BungeePlayer player = playerMap.get(uuid);
+		player.setPhrase(type);
+		player.broadcastJoin();
 	}
 }

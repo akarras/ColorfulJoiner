@@ -2,6 +2,7 @@ package net.supernoobs.colorfuljoiner.storage;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -11,7 +12,7 @@ import net.supernoobs.colorfuljoiner.datatypes.ColorPlayer;
 import net.supernoobs.colorfuljoiner.datatypes.JoinType;
 
 public class ColorfulMessages {
-	private HashMap<String,JoinType> joinMessages;
+	private LinkedHashMap<String,JoinType> joinMessages;
 	private JoinType defaultJoin;
 	private JoinType phrases;
 	private JoinType prefix;
@@ -28,20 +29,20 @@ public class ColorfulMessages {
 		phrases.quitMessage = (String) yaml.get("phrases.quit");
 		
 		prefix = new JoinType();
-		prefix.joinMessage = (String) yaml.get("players.join");
-		prefix.quitMessage = (String) yaml.get("players.leave");
+		prefix.joinMessage = (String) yaml.get("prefix.join");
+		prefix.quitMessage = (String) yaml.get("prefix.leave");
 		
 		firstJoin = (String) yaml.get("firstJoin");
 		
 		defaultJoin = new JoinType();
 		defaultJoin.joinMessage = (String) yaml.get("default.join");
 		defaultJoin.quitMessage = (String) yaml.get("default.quit");
-		
+
 		ConfigurationSection section = yaml.getConfigurationSection("messages");
 		loadCustomMessages(section);
 	}
 	
-	public HashMap<String,JoinType> getJoinMessages(){
+	public LinkedHashMap<String,JoinType> getJoinMessages(){
 		return joinMessages;
 	}
 	
@@ -81,7 +82,7 @@ public class ColorfulMessages {
 		}
 	}
 	private void loadCustomMessages(ConfigurationSection section) {
-		joinMessages = new HashMap<String,JoinType>();
+		joinMessages = new LinkedHashMap<String,JoinType>();
 		for(String key:section.getKeys(false)) {
 			JoinType type = new JoinType();
 			type.joinMessage = (String) section.get(key+".join");
